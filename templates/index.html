@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Performance Analysis Tool - Core Web Vitals & Graphs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-chart-line"></i>
+                <h1>WebSite Performance Analyzer</h1>
+            </div>
+            <div class="nav-links">
+                <button class="nav-link active" data-tab="single">
+                    <i class="fas fa-globe"></i> Single Analysis
+                </button>
+                <button class="nav-link" data-tab="batch">
+                    <i class="fas fa-layer-group"></i> Batch Analysis
+                </button>
+                <button class="nav-link" data-tab="compare">
+                    <i class="fas fa-chart-comparison"></i> Compare
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Single Analysis Tab -->
+        <div id="single-tab" class="tab-content active">
+            <div class="hero-section">
+                <h2>Analyze Your Website Performance</h2>
+                <p>Get detailed insights about Core Web Vitals, SEO, and performance metrics with beautiful graphs</p>
+            </div>
+
+            <div class="analysis-form">
+                <div class="form-group">
+                    <label for="url-input"><i class="fas fa-link"></i> Website URL</label>
+                    <div class="input-group">
+                        <input type="url" id="url-input" placeholder="https://example.com" class="url-input">
+                        <button id="analyze-btn" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Analyze Website
+                        </button>
+                    </div>
+                    <small class="form-text">Include http:// or https:// for accurate results</small>
+                </div>
+            </div>
+
+            <div id="loading" class="loading-container" style="display: none;">
+                <div class="spinner"></div>
+                <p><i class="fas fa-chart-pie"></i> Analyzing website performance...</p>
+                <small>This may take a few seconds</small>
+            </div>
+
+            <div id="results-container" style="display: none;"></div>
+        </div>
+
+        <!-- Batch Analysis Tab -->
+        <div id="batch-tab" class="tab-content">
+            <div class="hero-section">
+                <h2>Batch Website Analysis</h2>
+                <p>Analyze up to 10 websites at once and compare results</p>
+            </div>
+
+            <div class="analysis-form">
+                <div class="form-group">
+                    <label for="urls-input"><i class="fas fa-list-ul"></i> Website URLs (one per line)</label>
+                    <textarea id="urls-input" class="urls-textarea" rows="6" placeholder="https://example1.com&#10;https://example2.com&#10;https://example3.com"></textarea>
+                    <button id="batch-analyze-btn" class="btn btn-primary">
+                        <i class="fas fa-chart-bar"></i> Batch Analyze
+                    </button>
+                </div>
+            </div>
+
+            <div id="batch-loading" class="loading-container" style="display: none;">
+                <div class="spinner"></div>
+                <p>Analyzing multiple websites...</p>
+            </div>
+
+            <div id="batch-results-container" style="display: none;"></div>
+        </div>
+
+        <!-- Compare Tab -->
+        <div id="compare-tab" class="tab-content">
+            <div class="hero-section">
+                <h2>Compare Websites</h2>
+                <p>Compare performance of 2-5 websites side by side</p>
+            </div>
+
+            <div class="analysis-form">
+                <div class="form-group">
+                    <label for="compare-urls"><i class="fas fa-code-branch"></i> Website URLs to Compare</label>
+                    <textarea id="compare-urls" class="urls-textarea" rows="5" placeholder="https://site1.com&#10;https://site2.com&#10;https://site3.com"></textarea>
+                    <button id="compare-btn" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i> Compare Websites
+                    </button>
+                </div>
+            </div>
+
+            <div id="compare-loading" class="loading-container" style="display: none;">
+                <div class="spinner"></div>
+                <p>Comparing websites...</p>
+            </div>
+
+            <div id="compare-results-container" style="display: none;"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Powered by Core Web Vitals | Real-time Performance Analysis | Beautiful Visualizations</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+url,timestamp,overall_score,page_size_kb,response_time_ms,js_files,css_files,images,lcp_ms,fid_ms,cls_score
+https://www.google.com,2024-01-15,95,512,120,5,2,4,1800,45,0.02
+https://www.github.com,2024-01-15,88,850,180,12,4,15,2100,65,0.05
+https://www.stackoverflow.com,2024-01-15,82,1200,220,15,6,25,2400,78,0.08
+https://www.medium.com,2024-01-15,75,1500,280,20,8,35,2800,95,0.12
+https://www.reddit.com,2024-01-15,70,1800,320,25,10,45,3200,120,0.18

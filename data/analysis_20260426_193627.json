@@ -1,0 +1,87 @@
+{
+  "url": "https://www.deepseek.com/en",
+  "timestamp": "2026-04-26T19:36:27.769492",
+  "metrics": {
+    "response_time_ms": 405.64,
+    "page_size_kb": 95.4,
+    "status_code": 200,
+    "ttfb": 44.33,
+    "resource_counts": {
+      "javascript_files": 10,
+      "css_files": 3,
+      "images": 2,
+      "total_resources": 15
+    },
+    "estimated_metrics": {
+      "lcp_ms": 1630,
+      "fid_ms": 150,
+      "cls_score": 0.05,
+      "fcp_ms": 1315
+    },
+    "html_structure": {
+      "has_meta_viewport": true,
+      "has_description": true,
+      "has_keywords": true,
+      "has_og_tags": true,
+      "has_favicon": true,
+      "heading_structure": {
+        "counts": {
+          "h1": 0,
+          "h2": 0,
+          "h3": 0,
+          "h4": 0,
+          "h5": 0,
+          "h6": 0
+        },
+        "has_h1": false,
+        "is_logical": false,
+        "score": "needs_improvement"
+      },
+      "image_alt_tags": {
+        "total": 2,
+        "with_alt": 2,
+        "percentage": 100.0,
+        "score": "good"
+      }
+    },
+    "compression": {
+      "is_compressed": true,
+      "encoding": "gzip",
+      "score": "good"
+    },
+    "cache_headers": {
+      "has_caching": "",
+      "cache_control": "no-cache",
+      "score": "needs_improvement"
+    }
+  },
+  "analysis": {
+    "ttfb": {
+      "value": 44.33,
+      "rating": "good",
+      "thresholds": {
+        "good": 200,
+        "needs_improvement": 500
+      }
+    },
+    "overall_rating": "good"
+  },
+  "recommendations": [
+    {
+      "category": "Caching",
+      "priority": "Medium",
+      "issue": "Missing or improper cache headers",
+      "recommendation": "Implement browser caching using Cache-Control headers.",
+      "estimated_impact": "Medium"
+    },
+    {
+      "category": "SEO",
+      "priority": "Medium",
+      "issue": "Poor heading structure",
+      "recommendation": "Use one H1 tag per page and maintain proper heading hierarchy.",
+      "estimated_impact": "Medium"
+    }
+  ],
+  "overall_score": 85,
+  "status": "success"
+}

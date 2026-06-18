@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Analysis Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="results-header">
+            <button onclick="window.location.href='/'" class="btn btn-secondary">← New Analysis</button>
+            <button id="download-report" class="btn btn-primary">Download PDF Report</button>
+        </div>
+
+        <div id="results-content"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+        // Load results from localStorage or URL params
+        const resultsData = JSON.parse(localStorage.getItem('analysisResults') || '{}');
+        if (resultsData.url) {
+            displayResults(resultsData);
+        }
+    </script>
+</body>
+</html>
